@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+		<!-- 加载状态 -->
+		<div class="loading-mask" id="init_loading">
+			<div class="loading-icon"></div>
+		</div>
+		
+		<!-- 内容区 -->
+		<div class="container" id="root">
+			<div id="fiction_chapter_title"></div>
+			<div class="m-artical-action">
+				<div class="artical-action-mid" id="action_mid"></div>
+			</div>
+			<div id="fiction_container" class="m-read-content">
+				<!-- 测试文字内容 -->
+				<h4>春节-西湖-两个半人</h4>
+				<p>
+				    3月19日，傍晚的时候，和鑫去西湖逛了会，像是去断桥看水墨画展览，三月的西湖，却没能够领会。断桥，白堤，去的时候，都不一样，不一样的景，不一样的水，不同的行人。想起第一次来西湖，大年初一，人一点都不少，同行一块四个人，真是时不同，景不同，人更不同！
+				</p>
+				<p>
+                    那会的心除了被西湖之景所着迷外，更多是忐忑不安，是仿徨，是迷茫，是真正的一无所有！
+				</p>
+				<p>
+                    一行四人，也都在二月末分道扬镳。郭学军回家那边去做销售，我看好他，97年的，成熟，老练，社会方面比我强很多，用心交流过；“赵日天”继续留着，有着别人都没有过的经历，从他身上看到了儿时伙伴们的影子；姓龙的家伙99年的，应该还在外婆家包着水晶饺，蒸着杭州小笼包；另一个名字忘了，是个大专生，有心机，挺长的小巧帅气，估计也回家了！在杭州一块住了一个多月，脑海里还会记得“邓金华”，“日天”，“赵日地”，“外婆家”，“茶香鸡”，“雪媚娘”，“葵巷社区”，“203”，“西湖银泰”……这些名词。现在想想，仿佛就在昨天，又感觉很远很远。
+				</p>
+				<p>
+					“生活中，要学会吃亏，吃亏是福”，外婆家西湖银泰店经理如是说；
+				</p>
+				<p>
+					“说话要注意分寸，与人交际，谨言为善，遇事三思而后行”，两次（第一次，和中介沟通报销车票；第二次，和家教中介沟通安排家教）吵架后的教训；
+				</p>
+				<p>
+					“从心出发，努力学习，低调做人，谨言慎行，成熟稳重，闭眼狂奔！”，对自己如是说！					
+				</p>
+			</div>
+			
+			<!-- 仿native上边栏 -->
+			<div class="top-nav" id="top-nav" >  <!-- style="display:none" -->
+				<div class="top-nav-warp">
+					<div class="icon-back"></div>
+					<div class="nav-title" id="nav_title">
+						返回书架
+					</div>
+				</div>
+			</div>
+			
+			<!-- 设置菜单 -->
+			<div class="top-nav-pannel-bk font-container" id="font-container" ></div> <!-- style="display:none" -->
+			<div class="top-nav-pannel font-container" id="font-container" >  <!-- style="display:none" -->
+				<div class="child-mod">
+					<span>字号</span>
+					<button id="large-font" class="spe-button">
+						大
+					</button>
+					<button id="small-font" class="spe-button" style="margin-left:10px;">
+						小
+					</button>
+				</div>
+				<div class="child-mod" id="bk-container">
+					<span>背景</span>
+				</div>
+			</div>
+			
+			<!-- 章节切换 -->
+			<div class="m-button-bar" id="bottom_tool_bar" >  <!-- style="display:none;padding-bottom:70px;" -->
+				<ul class="u-tab" id="bottom_tool_bar_ul">
+					<li id="prev_button" >
+						上一章
+					</li>
+					<li id="next_button" style="border-right:none">
+						下一章
+					</li>
+				</ul>
+			</div>
+
+			<div class="bottom-nav-bk bottom_nav" style="display:none"></div>
+			
+			<!-- 仿native底边栏 -->
+			<div class="bottom-nav bottom_nav" >  <!-- style="display:none" -->
+				<div class="item menu-button" id="menu_button">
+					<div class="item-warp">
+						<div class="icon-menu"></div>
+						<div class="icon-text">
+							目录
+						</div>
+					</div>
+				</div>
+				<div class="item" id="font-button">
+					<div class="item-warp">
+						<div class="icon-ft"></div>
+						<div class="icon-text">
+							字体
+						</div>
+					</div>
+				</div>
+				<div class="item" id="night-button">
+					<div class="item-warp" style="display:none" id="day_icon">
+						<div class="icon-day"></div>
+						<div class="icon-text">
+							白天
+						</div>
+					</div>
+					<div class="item-warp" id="night_icon">
+						<div class="icon-night"></div>
+						<div class="icon-text">
+							夜间
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="loading" id="loading" style="display:none">
+				正在加载中...
+			</div>
+			
+			
+			<div class="m-tool-bar-mask" id="tool_bar_mask" style="display:none"></div> 
+			
+			
+			<ul class="menu-container chapter-list" id="menu_container" style="display:none"></ul>
+			
+			
+			<div class="menu-mask" id="menu_mask" style="display:none"></div> 
+			
+			
+			<div class="mask" id="mask" style="display:none"></div> 
+		</div>
+		
+		
+		<script src="lib/zepto.min.js"></script>
+		<script>
+			window.jQuery = $;
+		</script>
+		<script src="js/jquery.base64.js"></script>
+		<script src="js/jquery.jsonp.js"></script>
+
+		<script>
+			
+		</script>
+	</body>
+</html>
