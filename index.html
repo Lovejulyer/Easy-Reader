@@ -13,13 +13,28 @@
 			<div class="loading-icon"></div>
 		</div>
 		
-		<!-- 内容区 -->
+		<!-- 阅读区 -->
 		<div class="container" id="root">
-			<div id="fiction_chapter_title"></div>
+		
+			<!-- 仿native上边栏 -->
+			<div class="top-nav" id="top-nav" style="display:none">  <!-- style="display:none" -->
+				<div class="top-nav-warp">
+					<div class="icon-back"></div>
+					<div class="nav-title" id="nav_title">
+						返回书架
+					</div>
+				</div>
+			</div>
+		
+			<!-- 小说章节标题 -->
+			<div id="fiction_chapter_title"></div>		
+			<!-- 内容touch操作区域 -->
 			<div class="m-artical-action">
 				<div class="artical-action-mid" id="action_mid"></div>
-			</div>
+			</div>	
+			<!-- 小说主体内容 -->
 			<div id="fiction_container" class="m-read-content">
+			
 				<!-- 测试文字内容 -->
 				<h4>春节-西湖-两个半人</h4>
 				<p>
@@ -42,49 +57,41 @@
 				</p>
 			</div>
 			
-			<!-- 仿native上边栏 -->
-			<div class="top-nav" id="top-nav" >  <!-- style="display:none" -->
-				<div class="top-nav-warp">
-					<div class="icon-back"></div>
-					<div class="nav-title" id="nav_title">
-						返回书架
-					</div>
-				</div>
-			</div>
-			
-			<!-- 设置菜单 -->
-			<div class="top-nav-pannel-bk font-container" id="font-container" ></div> <!-- style="display:none" -->
-			<div class="top-nav-pannel font-container" id="font-container" >  <!-- style="display:none" -->
-				<div class="child-mod">
-					<span>字号</span>
-					<button id="large-font" class="spe-button">
-						大
-					</button>
-					<button id="small-font" class="spe-button" style="margin-left:10px;">
-						小
-					</button>
-				</div>
-				<div class="child-mod" id="bk-container">
-					<span>背景</span>
-				</div>
-			</div>
-			
 			<!-- 章节切换 -->
 			<div class="m-button-bar" id="bottom_tool_bar" >  <!-- style="display:none;padding-bottom:70px;" -->
 				<ul class="u-tab" id="bottom_tool_bar_ul">
 					<li id="prev_button" >
 						上一章
 					</li>
-					<li id="next_button" style="border-right:none">
+					<li id="next_button" >
 						下一章
 					</li>
 				</ul>
+			</div>			
+			
+			<!-- 设置操作面板 -->
+			<div class="nav-pannel-bk font-container" id="font-container" style="display:none"></div> <!-- style="display:none" -->
+			<div class="nav-pannel font-container" id="font-container" style="display:none">  <!-- style="display:none" -->
+				<div class="child-mod">
+					<span>字号</span>
+					<button id="large-font" class="font-size-button">
+						大
+					</button>
+					<button id="small-font" class="font-size-button">
+						小
+					</button>
+				</div>
+				<div class="child-mod" id="bk-container">
+					<span>背景</span>
+					<div class="bk-container">
+						<div class="bk-container-current"></div>
+					</div>
+				</div>
 			</div>
-
-			<div class="bottom-nav-bk bottom_nav" style="display:none"></div>
 			
 			<!-- 仿native底边栏 -->
-			<div class="bottom-nav bottom_nav" >  <!-- style="display:none" -->
+			<div class="bottom-nav-bk bottom_nav" style="display:none"></div>
+			<div class="bottom-nav bottom_nav" style="display:none">  <!-- style="display:none" -->
 				<div class="item menu-button" id="menu_button">
 					<div class="item-warp">
 						<div class="icon-menu"></div>
@@ -102,36 +109,25 @@
 					</div>
 				</div>
 				<div class="item" id="night-button">
-					<div class="item-warp" style="display:none" id="day_icon">
+					<div class="item-warp" id="day_icon" >
 						<div class="icon-day"></div>
 						<div class="icon-text">
 							白天
 						</div>
 					</div>
-					<div class="item-warp" id="night_icon">
+					<div class="item-warp" id="night_icon" style="display:none">
 						<div class="icon-night"></div>
 						<div class="icon-text">
 							夜间
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> 
 
 			<div class="loading" id="loading" style="display:none">
 				正在加载中...
 			</div>
-			
-			
-			<div class="m-tool-bar-mask" id="tool_bar_mask" style="display:none"></div> 
-			
-			
-			<ul class="menu-container chapter-list" id="menu_container" style="display:none"></ul>
-			
-			
-			<div class="menu-mask" id="menu_mask" style="display:none"></div> 
-			
-			
-			<div class="mask" id="mask" style="display:none"></div> 
+
 		</div>
 		
 		
@@ -141,6 +137,8 @@
 		</script>
 		<script src="js/jquery.base64.js"></script>
 		<script src="js/jquery.jsonp.js"></script>
+		<!-- <script src="js/main.js"></script> -->
+		<script src="js/maintest.js"></script>
 
 		<script>
 			
